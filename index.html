@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Titans: A Comparative Analysis of BTC, ETH, & XRP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #00A6FB, #0582CA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black mb-2 gradient-text">Crypto Titans</h1>
+            <p class="text-lg md:text-xl text-gray-600">A Comparative Analysis of Bitcoin, Ethereum, & XRP</p>
+        </header>
+
+        <section id="foundations" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The Foundations: Core Purpose & Function</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold mb-2" style="color: #FBB13C;">Bitcoin (BTC)</h3>
+                    <p class="text-gray-700 font-semibold mb-4">Store of Value ("Digital Gold")</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Supply:</strong> Fixed Cap (21 Million)</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Mechanism:</strong> Proof-of-Work/Stake</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h3 class="text-2xl font-bold mb-2" style="color: #0582CA;">Ethereum (ETH)</h3>
+                    <p class="text-gray-700 font-semibold mb-4">Smart Contract Platform</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Supply:</strong> Deflationary/Elastic</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Mechanism:</strong> Proof-of-Stake</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-2" style="color: #E84855;">XRP</h3>
+                    <p class="text-gray-700 font-semibold mb-4">Cross-Border Payments</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Supply:</strong> Pre-Mined (100 Billion)</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Mechanism:</strong> UNL Consensus</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="drivers" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The Driving Forces: Growth & Performance</h2>
+             <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Each asset's value is driven by a unique combination of technological utility, market sentiment, and adoption. While all are volatile, their performance metrics reveal distinct profiles tailored to different investment theses.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Transaction Speed Comparison</h3>
+                     <p class="text-center text-sm text-gray-500 mb-4">XRP's focus on payments is evident in its near-instant settlement time compared to the more deliberate block times of Bitcoin and Ethereum.</p>
+                    <div class="chart-container">
+                        <canvas id="speedChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Market Behavior Profile</h3>
+                     <p class="text-center text-sm text-gray-500 mb-4">This profile shows XRP's higher volatility and weaker correlation to Bitcoin, highlighting its independent market drivers, often tied to regulatory news.</p>
+                    <div class="chart-container">
+                        <canvas id="profileChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projections" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The Horizon: 2030 Long-Term Projections</h2>
+             <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Based on current trends, analyst projections, and adoption rates, the long-term outlook for these assets varies dramatically. The following chart uses a logarithmic scale to effectively compare these wide-ranging potential valuations.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center mb-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                     <h3 class="text-xl font-bold mb-2" style="color: #FBB13C;">Bitcoin Projection</h3>
+                    <p class="text-5xl font-black" style="color: #FBB13C;">$1M</p>
+                    <p class="text-gray-600">High-End Target</p>
+                    <p class="text-xs text-gray-400 mt-2">Current Price Placeholder: $60,000</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg p-6">
+                     <h3 class="text-xl font-bold mb-2" style="color: #0582CA;">Ethereum Projection</h3>
+                    <p class="text-5xl font-black" style="color: #0582CA;">$20K</p>
+                    <p class="text-gray-600">High-End Target</p>
+                    <p class="text-xs text-gray-400 mt-2">Current Price Placeholder: $3,500</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg p-6">
+                     <h3 class="text-xl font-bold mb-2" style="color: #E84855;">XRP Projection</h3>
+                    <p class="text-5xl font-black" style="color: #E84855;">$30+</p>
+                    <p class="text-gray-600">High-End Target</p>
+                    <p class="text-xs text-gray-400 mt-2">Current Price Placeholder: $0.50</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                 <h3 class="text-xl font-bold text-center mb-4">Projected 2030 Value Range (Logarithmic Scale)</h3>
+                <div class="chart-container h-96 max-h-[500px]">
+                    <canvas id="projectionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#00A6FB]">
+                <h3 class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">2030 Potential Return Calculator</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+                    
+                    <div>
+                        <label for="investmentAmount" class="block text-sm font-medium text-gray-700 mb-1">Your Investment ($)</label>
+                        <input type="number" id="investmentAmount" value="1000" min="1" class="w-full p-3 border border-gray-300 rounded-md focus:ring-[#00A6FB] focus:border-[#00A6FB]">
+                    </div>
+
+                    <div>
+                        <label for="currencySelect" class="block text-sm font-medium text-gray-700 mb-1">Select Currency</label>
+                        <select id="currencySelect" class="w-full p-3 border border-gray-300 rounded-md focus:ring-[#00A6FB] focus:border-[#00A6FB] appearance-none bg-white">
+                            <option value="BTC">Bitcoin (BTC)</option>
+                            <option value="ETH">Ethereum (ETH)</option>
+                            <option value="XRP">XRP</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <button onclick="calculateReturn()" class="w-full p-3 text-white font-bold rounded-md shadow-md transition-all duration-300 ease-in-out hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-[#00A6FB] focus:ring-opacity-50" style="background-color: #00A6FB;">
+                            Calculate Return
+                        </button>
+                    </div>
+                </div>
+
+                <div id="results" class="mt-8 text-center bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[100px] flex flex-col justify-center">
+                    <p class="text-gray-500">Enter an amount and select a currency to see the potential 2030 return.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8" style="color: #0582CA;">Further Research & Reputable Resources</h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                <p class="text-gray-600 mb-6 text-center">We encourage viewers to conduct their own thorough research. Here are some starting points to understand the underlying principles and technologies of these assets:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-bold" style="color: #FBB13C;">Foundational Education</h4>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-xl mr-3 text-[#E84855]">▶️</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">The Hidden Secrets of Money</p>
+                                    <a href="https://www.youtube.com/playlist?list=PL223C8EE42FB4B7C9" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Watch the full video series (Mike Maloney)</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-3 text-[#E84855]">📰</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Understanding Fiat vs. Sound Money</p>
+                                    <span class="text-gray-500 text-sm">Resources covering the history of monetary systems.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-bold" style="color: #0582CA;">Currency Deep Dives</h4>
+                        <ul class="list-none space-y-3">
+                             <li class="flex items-start">
+                                <span class="text-xl mr-3" style="color: #FBB13C;">₿</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Bitcoin.org</p>
+                                    <a href="https://bitcoin.org/en/getting-started" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Official guides and documentation</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-3" style="color: #0582CA;">Ξ</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Ethereum.org</p>
+                                    <a href="https://ethereum.org/en/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Ecosystem overview and roadmap</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-3" style="color: #E84855;">𝓡</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">XRP Ledger (XRPL)</p>
+                                    <a href="https://xrpl.org/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Documentation on the payment protocol</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 text-sm text-gray-500">
+            <p>Disclaimer: Cryptocurrency markets are highly volatile. This content is for informational purposes only and does not constitute investment advice.</p>
+        </footer>
+    </div>
+
+    <script>
+        const PRICES = {
+            BTC: { current: 60000, future: 1000000, color: '#FBB13C' },
+            ETH: { current: 3500, future: 20000, color: '#0582CA' },
+            XRP: { current: 0.50, future: 30, color: '#E84855' }
+        };
+
+        function calculateReturn() {
+            const amountInput = document.getElementById('investmentAmount');
+            const currencySelect = document.getElementById('currencySelect');
+            const resultsDiv = document.getElementById('results');
+
+            const investmentAmount = parseFloat(amountInput.value);
+            const currencyKey = currencySelect.value;
+            const data = PRICES[currencyKey];
+            
+            if (isNaN(investmentAmount) || investmentAmount <= 0) {
+                resultsDiv.innerHTML = '<p class="text-red-500 font-semibold">Please enter a valid investment amount.</p>';
+                return;
+            }
+
+            const numberOfCoins = investmentAmount / data.current;
+            const futureValue = numberOfCoins * data.future;
+            const totalReturn = futureValue - investmentAmount;
+            const percentReturn = (totalReturn / investmentAmount) * 100;
+
+            const format = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            const returnColor = data.color;
+
+            resultsDiv.innerHTML = `
+                <p class="text-lg font-semibold text-gray-700 mb-2">Potential 2030 Performance for ${currencyKey}</p>
+                <div class="grid grid-cols-3 gap-4 text-sm font-medium">
+                    <div>
+                        <p class="text-gray-500">Coins Acquired:</p>
+                        <p class="text-xl font-bold" style="color: ${returnColor};">${numberOfCoins.toFixed(2)}</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500">Future Value:</p>
+                        <p class="text-xl font-bold" style="color: ${returnColor};">${format.format(futureValue)}</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500">Total Return:</p>
+                        <p class="text-xl font-bold" style="color: ${returnColor};">+${percentReturn.toFixed(0)}%</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 mt-4">*Based on current price placeholders and the high-end 2030 projection.</p>
+            `;
+        }
+
+        function processLabel(label) {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const sharedChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                           family: "'Inter', sans-serif",
+                           size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    bodyFont: {
+                         family: "'Inter', sans-serif",
+                    },
+                    titleFont: {
+                        family: "'Inter', sans-serif",
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        font: {
+                             family: "'Inter', sans-serif",
+                             size: 12
+                        }
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                     ticks: {
+                        font: {
+                             family: "'Inter', sans-serif",
+                             size: 12
+                        }
+                    },
+                     grid: {
+                        color: '#e5e7eb'
+                    }
+                }
+            }
+        };
+        
+        const speedCtx = document.getElementById('speedChart').getContext('2d');
+        new Chart(speedCtx, {
+            type: 'bar',
+            data: {
+                labels: ['XRP (~4s)', 'Ethereum (~15s)', 'Bitcoin (~10m)'],
+                datasets: [{
+                    label: 'Transaction Time (Seconds)',
+                    data: [4, 15, 600],
+                    backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
+                    borderColor: ['#E84855', '#0582CA', '#FBB13C'],
+                    borderWidth: 1
+                }]
+            },
+            options: { ...sharedChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        type: 'logarithmic',
+                        title: {
+                            display: true,
+                            text: 'Time in Seconds (Log Scale)'
+                        },
+                         ticks: {
+                            font: {
+                                 family: "'Inter', sans-serif",
+                                 size: 12
+                            }
+                        },
+                         grid: {
+                            color: '#e5e7eb'
+                        }
+                    },
+                    y: {
+                         ticks: {
+                            font: {
+                                 family: "'Inter', sans-serif",
+                                 size: 12
+                            }
+                        },
+                         grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        const profileCtx = document.getElementById('profileChart').getContext('2d');
+        new Chart(profileCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Volatility', 'Correlation w/ BTC'],
+                datasets: [
+                    {
+                        label: 'BTC',
+                        data: [0.7, 1.0],
+                        backgroundColor: 'rgba(251, 177, 60, 0.2)',
+                        borderColor: '#FBB13C',
+                        pointBackgroundColor: '#FBB13C',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#FBB13C'
+                    },
+                    {
+                        label: 'ETH',
+                        data: [0.8, 0.8], 
+                        backgroundColor: 'rgba(5, 130, 202, 0.2)',
+                        borderColor: '#0582CA',
+                        pointBackgroundColor: '#0582CA',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#0582CA'
+                    },
+                    {
+                        label: 'XRP',
+                        data: [1.0, 0.5],
+                        backgroundColor: 'rgba(232, 72, 85, 0.2)',
+                        borderColor: '#E84855',
+                        pointBackgroundColor: '#E84855',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#E84855'
+                    }
+                ]
+            },
+            options: {
+                 responsive: true,
+                 maintainAspectRatio: false,
+                 plugins: {
+                    legend: {
+                        position: 'bottom',
+                         labels: {
+                            font: {
+                               family: "'Inter', sans-serif",
+                               size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: (tooltipItems) => tooltipItems[0].dataset.label
+                        },
+                         bodyFont: {
+                             family: "'Inter', sans-serif",
+                        },
+                        titleFont: {
+                            family: "'Inter', sans-serif",
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 1,
+                        pointLabels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold',
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        const projectionCtx = document.getElementById('projectionChart').getContext('2d');
+        new Chart(projectionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['XRP', 'Ethereum', 'Bitcoin'],
+                datasets: [{
+                    label: 'Low-End Projection ($)',
+                    data: [10, 15000, 500000],
+                    backgroundColor: '#006494',
+                    borderColor: '#006494',
+                    borderWidth: 1,
+                    stack: 'Stack 0',
+                }, {
+                    label: 'High-End Projection ($)',
+                    data: [20, 5000, 500000],
+                    backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
+                    borderColor: ['#E84855', '#0582CA', '#FBB13C'],
+                    borderWidth: 1,
+                    stack: 'Stack 0',
+                }]
+            },
+            options: {
+                ...sharedChartOptions,
+                indexAxis: 'y',
+                 scales: {
+                    x: {
+                        type: 'logarithmic',
+                        title: {
+                            display: true,
+                            text: 'Projected Value in USD (Log Scale)',
+                            font: {
+                                size: 14,
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        ticks: {
+                             font: {
+                                 family: "'Inter', sans-serif",
+                                 size: 12
+                            },
+                            callback: function(value, index, values) {
+                                if (value === 1000000) return '$1M';
+                                if (value === 100000) return '$100K';
+                                if (value === 10000) return '$10K';
+                                if (value === 1000) return '$1K';
+                                if (value === 100) return '$100';
+                                if (value === 10) return '$10';
+                                return null;
+                            }
+                        },
+                         grid: {
+                            color: '#e5e7eb'
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: {
+                            font: {
+                                size: 16,
+                                weight: 'bold',
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                         grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
