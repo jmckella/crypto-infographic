@@ -42,31 +42,36 @@
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-6xl font-black mb-2 gradient-text">Crypto Titans</h1>
             <p class="text-lg md:text-xl text-gray-600">A Comparative Analysis of Bitcoin, Ethereum, & XRP</p>
+            <!-- Current Date Display -->
+            <p id="priceTimestamp" class="text-sm text-gray-500 mt-2">Loading current prices...</p> 
         </header>
 
         <section id="foundations" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8">The Foundations: Core Purpose & Function</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- BTC Card -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <div class="text-5xl mb-4">💰</div>
                     <h3 class="text-2xl font-bold mb-2" style="color: #FBB13C;">Bitcoin (BTC)</h3>
-                    <p class="text-gray-700 font-semibold mb-4">Store of Value ("Digital Gold")</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Supply:</strong> Fixed Cap (21 Million)</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Mechanism:</strong> Proof-of-Work/Stake</p>
+                    <p class="text-gray-700 font-semibold mb-2">Store of Value ("Digital Gold")</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="btcCurrentPrice" class="font-bold text-base text-gray-800">$60,000</span> (Live)</p>
+                    <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Fixed Cap (21 Million)</p>
                 </div>
+                <!-- ETH Card -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <div class="text-5xl mb-4">⚙️</div>
                     <h3 class="text-2xl font-bold mb-2" style="color: #0582CA;">Ethereum (ETH)</h3>
-                    <p class="text-gray-700 font-semibold mb-4">Smart Contract Platform</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Supply:</strong> Deflationary/Elastic</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Mechanism:</strong> Proof-of-Stake</p>
+                    <p class="text-gray-700 font-semibold mb-2">Smart Contract Platform</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="ethCurrentPrice" class="font-bold text-base text-gray-800">$3,500</span> (Live)</p>
+                    <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Deflationary/Elastic</p>
                 </div>
+                <!-- XRP Card -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <div class="text-5xl mb-4">🌐</div>
                     <h3 class="text-2xl font-bold mb-2" style="color: #E84855;">XRP</h3>
-                    <p class="text-gray-700 font-semibold mb-4">Cross-Border Payments</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Supply:</strong> Pre-Mined (100 Billion)</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Mechanism:</strong> UNL Consensus</p>
+                    <p class="text-gray-700 font-semibold mb-2">Cross-Border Payments</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="xrpCurrentPrice" class="font-bold text-base text-gray-800">$0.50</span> (Live)</p>
+                    <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Pre-Mined (100 Billion)</p>
                 </div>
             </div>
         </section>
@@ -93,39 +98,43 @@
         </section>
 
         <section id="projections" class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8">The Horizon: 2030 Long-Term Projections</h2>
-             <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Based on current trends, analyst projections, and adoption rates, the long-term outlook for these assets varies dramatically. The following chart uses a logarithmic scale to effectively compare these wide-ranging potential valuations.</p>
+            <h2 class="text-3xl font-bold text-center mb-8">The Horizon: Trajectory Outlook</h2>
+             <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Toggle between the 5-year and 10-year high-end projections below. The calculator will automatically use the selected horizon.</p>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center mb-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                     <h3 class="text-xl font-bold mb-2" style="color: #FBB13C;">Bitcoin Projection</h3>
-                    <p class="text-5xl font-black" style="color: #FBB13C;">$1M</p>
-                    <p class="text-gray-600">High-End Target</p>
-                    <p class="text-xs text-gray-400 mt-2">Current Price Placeholder: $60,000</p>
+            <!-- HORIZON SELECTION BUTTONS (5Y/10Y) -->
+            <div class="flex justify-center space-x-4 mb-8">
+                <button id="horizon-5y" onclick="setProjectionHorizon('5Y')" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300">5-Year Outlook (2030)</button>
+                <button id="horizon-10y" onclick="setProjectionHorizon('10Y')" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-[#00A6FB] text-white shadow-md hover:opacity-80">10-Year Outlook (2035)</button>
+            </div>
+            
+            <!-- TABBED CURRENCY OUTLOOK -->
+            <div class="bg-white rounded-lg shadow-xl p-6 mb-10">
+                <h3 id="trajectoryTitle" class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">10-Year Trajectory Outlook (To 2035)</h3>
+                
+                <!-- Currency Tab Buttons -->
+                <div class="flex justify-center space-x-4 mb-6 flex-wrap">
+                    <button onclick="showOutlook('BTC')" id="tab-BTC" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-[#FBB13C] text-white shadow-md hover:opacity-80 m-1">Bitcoin (BTC)</button>
+                    <button onclick="showOutlook('ETH')" id="tab-ETH" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">Ethereum (ETH)</button>
+                    <button onclick="showOutlook('XRP')" id="tab-XRP" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">XRP</button>
                 </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6">
-                     <h3 class="text-xl font-bold mb-2" style="color: #0582CA;">Ethereum Projection</h3>
-                    <p class="text-5xl font-black" style="color: #0582CA;">$20K</p>
-                    <p class="text-gray-600">High-End Target</p>
-                    <p class="text-xs text-gray-400 mt-2">Current Price Placeholder: $3,500</p>
-                </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6">
-                     <h3 class="text-xl font-bold mb-2" style="color: #E84855;">XRP Projection</h3>
-                    <p class="text-5xl font-black" style="color: #E84855;">$30+</p>
-                    <p class="text-gray-600">High-End Target</p>
-                    <p class="text-xs text-gray-400 mt-2">Current Price Placeholder: $0.50</p>
+
+                <!-- Dynamic Content Display -->
+                <div id="outlook-content" class="p-6 border rounded-lg shadow-inner">
+                    <!-- Content will be injected here by JavaScript -->
                 </div>
             </div>
+            <!-- END TABBED CURRENCY OUTLOOK -->
 
             <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                 <h3 class="text-xl font-bold text-center mb-4">Projected 2030 Value Range (Logarithmic Scale)</h3>
+                 <h3 class="text-xl font-bold text-center mb-4">Projected Long-Term Value Range (Logarithmic Scale)</h3>
+                 <p class="text-center text-sm text-gray-500 mb-4">This chart reflects the <strong class="text-gray-800">10-Year (2035)</strong> high-end projections for comparative visualization.</p>
                 <div class="chart-container h-96 max-h-[500px]">
                     <canvas id="projectionChart"></canvas>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#00A6FB]">
-                <h3 class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">2030 Potential Return Calculator</h3>
+                <h3 id="calculatorTitle" class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">2035 Potential Return Calculator</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
                     
                     <div>
@@ -150,7 +159,7 @@
                 </div>
 
                 <div id="results" class="mt-8 text-center bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[100px] flex flex-col justify-center">
-                    <p class="text-gray-500">Enter an amount and select a currency to see the potential 2030 return.</p>
+                    <p class="text-gray-500">Enter an amount and select a currency to see the potential 2035 return.</p>
                 </div>
             </div>
         </section>
@@ -158,6 +167,18 @@
         <section id="resources" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8" style="color: #0582CA;">Further Research & Reputable Resources</h2>
             <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                 <!-- NEW PRICE TARGET METHODOLOGY -->
+                <div class="mb-8">
+                     <h4 class="text-xl font-bold mb-3 border-b pb-2" style="color: #0582CA;">Price Target Methodology</h4>
+                     <p class="text-gray-700 mb-3 text-sm">The 5-year (2030) and 10-year (2035) targets provided are high-end projections based on qualitative analysis, not guaranteed forecasts. They assume a 'best-case scenario' of continued crypto adoption and favorable regulatory environments.</p>
+                     <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                         <li><strong class="text-gray-800">BTC:</strong> Based on the assumption it captures an increasing share of the total global gold/reserve asset market capitalization after halving cycles.</li>
+                         <li><strong class="text-gray-800">ETH:</strong> Based on its network utility, assuming it maintains dominance as the primary L1 settlement layer, fueling high demand for transaction fees (EIP-1559 burn mechanism), and increased adoption of Layer 2 scaling.</li>
+                         <li><strong class="text-gray-800">XRP:</strong> Based on achieving mass institutional adoption in cross-border payments, potentially serving major global financial corridors, driving its market cap significantly higher.</li>
+                     </ul>
+                </div>
+                <!-- END NEW PRICE TARGET METHODOLOGY -->
+
                 <p class="text-gray-600 mb-6 text-center">We encourage viewers to conduct their own thorough research. Here are some starting points to understand the underlying principles and technologies of these assets:</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
@@ -170,11 +191,12 @@
                                     <a href="https://www.youtube.com/playlist?list=PL223C8EE42FB4B7C9" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Watch the full video series (Mike Maloney)</a>
                                 </div>
                             </li>
+                            <!-- UPDATED WITH LINK -->
                             <li class="flex items-start">
                                 <span class="text-xl mr-3 text-[#E84855]">📰</span>
                                 <div>
                                     <p class="font-semibold text-gray-800">Understanding Fiat vs. Sound Money</p>
-                                    <span class="text-gray-500 text-sm">Resources covering the history of monetary systems.</span>
+                                    <a href="https://www.investopedia.com/terms/f/fiatmoney.asp" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Read the Investopedia guide on Fiat Money</a>
                                 </div>
                             </li>
                         </ul>
@@ -196,6 +218,7 @@
                                     <a href="https://ethereum.org/en/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Ecosystem overview and roadmap</a>
                                 </div>
                             </li>
+                            <!-- XRPL LINK CONFIRMED -->
                             <li class="flex items-start">
                                 <span class="text-xl mr-3" style="color: #E84855;">𝓡</span>
                                 <div>
@@ -211,16 +234,165 @@
 
         <footer class="text-center mt-12 text-sm text-gray-500">
             <p>Disclaimer: Cryptocurrency markets are highly volatile. This content is for informational purposes only and does not constitute investment advice.</p>
+            <p class="mt-1 text-xs">Current prices powered by CoinGecko | Market status via <a href="https://coinmarketcap.com/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] font-semibold">CoinMarketCap</a>.</p>
         </footer>
     </div>
 
     <script>
+        // --- Global State ---
+        let activeCoin = 'BTC';
+        let currentHorizon = '10Y'; // Default to 10-Year (2035)
+
+        // Use a standard formatter for currency
+        const currencyFormatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        
+        // Data structure includes the CoinGecko API ID, a fallback current price, and 5-year/10-year projections.
         const PRICES = {
-            BTC: { current: 60000, future: 1000000, color: '#FBB13C' },
-            ETH: { current: 3500, future: 20000, color: '#0582CA' },
-            XRP: { current: 0.50, future: 30, color: '#E84855' }
+            BTC: { id: 'bitcoin', current: 60000, '5Y': 500000, '10Y': 1500000, color: '#FBB13C' },
+            ETH: { id: 'ethereum', current: 3500, '5Y': 15000, '10Y': 35000, color: '#0582CA' },
+            XRP: { id: 'ripple', current: 0.50, '5Y': 10, '10Y': 50, color: '#E84855' }
+        };
+        
+        const OUTLOOK_DETAILS = {
+            BTC: {
+                '5Y': { title: 'BTC: Halving Cycle Momentum', year: '2030', text: "By 2030, following the 2024 halving, Bitcoin is expected to solidify its status as a major, regulated store of value. Adoption by institutional funds and clearer regulatory frameworks will be the primary drivers. Focus shifts from purely speculative growth to long-term capital preservation." },
+                '10Y': { title: 'BTC: The Macro Reserve Asset', year: '2035', text: "By 2035, Bitcoin is projected to solidify its role as a global, non-sovereign **Store of Value**, competing directly with gold. Its trajectory is primarily driven by institutional adoption, regulatory clarity (e.g., global spot ETFs), and its fourth halving cycle completion. The scarcity model and its proven security make it an essential hedge against currency devaluation." }
+            },
+            ETH: {
+                '5Y': { title: 'ETH: Layer 2 Scaling & DeFi Dominance', year: '2030', text: "The next five years will see Ethereum's value driven by the success of Layer 2 solutions (rollups) for scalability and reduced costs. Continued dominance in Decentralized Finance (DeFi) and the 'ultrasound money' deflationary mechanism are key to driving price appreciation." },
+                '10Y': { title: 'ETH: The World Computer', year: '2035', text: "Ethereum's value trajectory is tied to its utility as the foundation for decentralized finance (DeFi), NFTs, and Web3 applications. Key drivers include successful scaling solutions, continued developer activity, and its deflationary 'ultrasound money' economic policy. Success relies on maintaining dominance against competing Layer 1 chains and high transaction throughput." }
+            },
+            XRP: {
+                '5Y': { title: 'XRP: Regulatory Clarity & Utility', year: '2030', text: "XRP's 5-year outlook is heavily dependent on achieving favorable regulatory outcomes and securing partnerships with major financial institutions for cross-border payments. The immediate focus is on proving the utility of its fast, low-cost transaction network." },
+                '10Y': { title: 'XRP: Bridging Traditional Finance', year: '2035', text: "XRP's trajectory is less tied to retail speculation and more focused on achieving major regulatory wins and integration with large financial institutions for cross-border settlements. Its efficiency and low-cost transaction fees are its core value proposition. Price growth will be contingent on securing partnerships and mainstream adoption by banks and payment providers worldwide." }
+            }
         };
 
+        // Utility to format large numbers to currency with no cents
+        const largeCurrencyFormatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+
+        // Function to fetch real-time prices with exponential backoff
+        async function fetchPrices(retries = 3) {
+            const ids = Object.values(PRICES).map(p => p.id).join(',');
+            const apiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                // Update PRICES object with fetched data
+                PRICES.BTC.current = data.bitcoin?.usd || PRICES.BTC.current;
+                PRICES.ETH.current = data.ethereum?.usd || PRICES.ETH.current;
+                PRICES.XRP.current = data.ripple?.usd || PRICES.XRP.current;
+
+                // Update UI elements
+                document.getElementById('btcCurrentPrice').textContent = largeCurrencyFormatter.format(PRICES.BTC.current);
+                document.getElementById('ethCurrentPrice').textContent = largeCurrencyFormatter.format(PRICES.ETH.current);
+                document.getElementById('xrpCurrentPrice').textContent = currencyFormatter.format(PRICES.XRP.current);
+
+                // Update date and year
+                const now = new Date();
+                const dateOptions = { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+                const formattedDate = now.toLocaleDateString('en-US', dateOptions);
+                document.getElementById('priceTimestamp').textContent = `Prices updated: ${formattedDate}`;
+
+            } catch (error) {
+                console.error(`Attempt failed. Retries left: ${retries - 1}.`, error);
+                if (retries > 1) {
+                    const delay = Math.pow(2, 3 - retries) * 1000; // Exponential backoff: 1s, 2s
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchPrices(retries - 1);
+                }
+                document.getElementById('priceTimestamp').textContent = `Live prices failed to load. Using static estimates.`;
+                console.error("All retries failed. Using static fallback data.");
+            }
+        }
+        
+        // Function to switch the main projection horizon (5Y or 10Y)
+        function setProjectionHorizon(horizon) {
+            currentHorizon = horizon;
+            const year = OUTLOOK_DETAILS.BTC[horizon].year; // Get the year (2030 or 2035)
+
+            // Update button styles
+            document.getElementById('horizon-5y').style.backgroundColor = (horizon === '5Y') ? '#00A6FB' : 'rgb(229 231 235)';
+            document.getElementById('horizon-5y').style.color = (horizon === '5Y') ? 'white' : 'rgb(55 65 81)';
+            document.getElementById('horizon-10y').style.backgroundColor = (horizon === '10Y') ? '#00A6FB' : 'rgb(229 231 235)';
+            document.getElementById('horizon-10y').style.color = (horizon === '10Y') ? 'white' : 'rgb(55 65 81)';
+
+            // Update section and calculator titles
+            document.getElementById('trajectoryTitle').textContent = `${horizon}-Year Trajectory Outlook (To ${year})`;
+            document.getElementById('calculatorTitle').textContent = `${year} Potential Return Calculator`;
+            
+            // Re-render the currently active coin outlook with the new horizon data
+            showOutlook(activeCoin);
+            
+            // Recalculate if values exist
+            const resultsDiv = document.getElementById('results');
+            if (!resultsDiv.textContent.includes("Enter an amount")) {
+                 calculateReturn();
+            } else {
+                 resultsDiv.innerHTML = `<p class="text-gray-500">Enter an amount and select a currency to see the potential ${year} return.</p>`;
+            }
+        }
+
+        // Function to handle the tabbed trajectory view (BTC, ETH, XRP)
+        function showOutlook(currencyKey) {
+            activeCoin = currencyKey;
+            
+            // Get data for the current coin and the selected horizon
+            const data = OUTLOOK_DETAILS[currencyKey][currentHorizon];
+            const targetPrice = PRICES[currencyKey][currentHorizon];
+            const color = PRICES[currencyKey].color;
+            const year = data.year;
+
+            // Reset all currency tabs to gray style
+            document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+                tab.style.backgroundColor = 'rgb(229 231 235)'; // gray-200
+                tab.style.color = 'rgb(55 65 81)'; // gray-700
+            });
+
+            // Style the active currency tab
+            const activeTab = document.getElementById(`tab-${currencyKey}`);
+            if (activeTab) {
+                activeTab.style.backgroundColor = color;
+                activeTab.style.color = 'white';
+            }
+            
+            // Format for display
+            const priceFormat = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: (targetPrice < 100) ? 2 : 0, 
+                maximumFractionDigits: (targetPrice < 100) ? 2 : 0
+            });
+
+            // Update the dynamic content pane
+            document.getElementById('outlook-content').innerHTML = `
+                <div class="border border-[${color}] rounded-lg shadow-inner p-4 transition-all duration-300">
+                    <h4 class="text-2xl font-extrabold mb-3" style="color: ${color};">${data.title}</h4>
+                    <p class="text-gray-700 mb-4">${data.text}</p>
+                    <p class="text-2xl font-black mt-3 text-center">${year} High-End Target: <span class="text-[${color}]">${priceFormat.format(targetPrice)}+</span></p>
+                </div>
+            `;
+            // Ensure the border color is set correctly using the style attribute
+            document.getElementById('outlook-content').querySelector('div').style.borderColor = color;
+        }
+
+
+        // Function to run the calculator based on dynamic prices
         function calculateReturn() {
             const amountInput = document.getElementById('investmentAmount');
             const currencySelect = document.getElementById('currencySelect');
@@ -229,31 +401,36 @@
             const investmentAmount = parseFloat(amountInput.value);
             const currencyKey = currencySelect.value;
             const data = PRICES[currencyKey];
+            const year = OUTLOOK_DETAILS[currencyKey][currentHorizon].year;
             
             if (isNaN(investmentAmount) || investmentAmount <= 0) {
                 resultsDiv.innerHTML = '<p class="text-red-500 font-semibold">Please enter a valid investment amount.</p>';
                 return;
             }
 
-            const numberOfCoins = investmentAmount / data.current;
-            const futureValue = numberOfCoins * data.future;
+            const currentPrice = data.current;
+            const targetPrice = data[currentHorizon];
+            
+            const numberOfCoins = investmentAmount / currentPrice;
+            const futureValue = numberOfCoins * targetPrice;
             const totalReturn = futureValue - investmentAmount;
             const percentReturn = (totalReturn / investmentAmount) * 100;
 
+            // Format for display
             const format = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0
+                minimumFractionDigits: (targetPrice < 100) ? 2 : 0, 
+                maximumFractionDigits: (targetPrice < 100) ? 2 : 0
             });
-
+            
             const returnColor = data.color;
 
             resultsDiv.innerHTML = `
-                <p class="text-lg font-semibold text-gray-700 mb-2">Potential 2030 Performance for ${currencyKey}</p>
+                <p class="text-lg font-semibold text-gray-700 mb-2">Potential ${year} Performance for ${currencyKey}</p>
                 <div class="grid grid-cols-3 gap-4 text-sm font-medium">
                     <div>
-                        <p class="text-gray-500">Coins Acquired:</p>
+                        <p class="text-gray-500">Coins Acquired (at ${currencyFormatter.format(currentPrice)}):</p>
                         <p class="text-xl font-bold" style="color: ${returnColor};">${numberOfCoins.toFixed(2)}</p>
                     </div>
                     <div>
@@ -265,42 +442,12 @@
                         <p class="text-xl font-bold" style="color: ${returnColor};">+${percentReturn.toFixed(0)}%</p>
                     </div>
                 </div>
-                <p class="text-xs text-gray-400 mt-4">*Based on current price placeholders and the high-end 2030 projection.</p>
+                <p class="text-xs text-gray-400 mt-4">*Based on the current live price and the high-end ${year} projection.</p>
             `;
         }
 
-        function processLabel(label) {
-            const maxLength = 16;
-            if (label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxLength) {
-                    lines.push(currentLine.trim());
-                    currentLine = word;
-                } else {
-                    currentLine = (currentLine + ' ' + word).trim();
-                }
-            }
-            if (currentLine) {
-                lines.push(currentLine.trim());
-            }
-            return lines;
-        }
-
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            } else {
-                return label;
-            }
-        };
-
+        // --- Chart Initialization (remains based on 10-Year for max comparison) ---
+        
         const sharedChartOptions = {
             responsive: true,
             maintainAspectRatio: false,
@@ -316,244 +463,147 @@
                 },
                 tooltip: {
                     callbacks: {
-                        title: tooltipTitleCallback
+                        title: (tooltipItems) => {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
                     },
-                    bodyFont: {
-                         family: "'Inter', sans-serif",
-                    },
-                    titleFont: {
-                        family: "'Inter', sans-serif",
-                    }
+                    bodyFont: { family: "'Inter', sans-serif" },
+                    titleFont: { family: "'Inter', sans-serif" }
                 }
             },
             scales: {
                 x: {
-                    ticks: {
-                        font: {
-                             family: "'Inter', sans-serif",
-                             size: 12
-                        }
-                    },
-                    grid: {
-                        display: false
-                    }
+                    ticks: { font: { family: "'Inter', sans-serif", size: 12 } },
+                    grid: { display: false }
                 },
                 y: {
-                     ticks: {
-                        font: {
-                             family: "'Inter', sans-serif",
-                             size: 12
-                        }
-                    },
-                     grid: {
-                        color: '#e5e7eb'
-                    }
+                     ticks: { font: { family: "'Inter', sans-serif", size: 12 } },
+                     grid: { color: '#e5e7eb' }
                 }
             }
         };
         
-        const speedCtx = document.getElementById('speedChart').getContext('2d');
-        new Chart(speedCtx, {
-            type: 'bar',
-            data: {
-                labels: ['XRP (~4s)', 'Ethereum (~15s)', 'Bitcoin (~10m)'],
-                datasets: [{
-                    label: 'Transaction Time (Seconds)',
-                    data: [4, 15, 600],
-                    backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
-                    borderColor: ['#E84855', '#0582CA', '#FBB13C'],
-                    borderWidth: 1
-                }]
-            },
-            options: { ...sharedChartOptions,
-                indexAxis: 'y',
-                scales: {
-                    x: {
-                        type: 'logarithmic',
-                        title: {
-                            display: true,
-                            text: 'Time in Seconds (Log Scale)'
-                        },
-                         ticks: {
-                            font: {
-                                 family: "'Inter', sans-serif",
-                                 size: 12
-                            }
-                        },
-                         grid: {
-                            color: '#e5e7eb'
-                        }
-                    },
-                    y: {
-                         ticks: {
-                            font: {
-                                 family: "'Inter', sans-serif",
-                                 size: 12
-                            }
-                        },
-                         grid: {
-                            display: false
-                        }
-                    }
-                }
-            }
-        });
-
-        const profileCtx = document.getElementById('profileChart').getContext('2d');
-        new Chart(profileCtx, {
-            type: 'radar',
-            data: {
-                labels: ['Volatility', 'Correlation w/ BTC'],
-                datasets: [
-                    {
-                        label: 'BTC',
-                        data: [0.7, 1.0],
-                        backgroundColor: 'rgba(251, 177, 60, 0.2)',
-                        borderColor: '#FBB13C',
-                        pointBackgroundColor: '#FBB13C',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#FBB13C'
-                    },
-                    {
-                        label: 'ETH',
-                        data: [0.8, 0.8], 
-                        backgroundColor: 'rgba(5, 130, 202, 0.2)',
-                        borderColor: '#0582CA',
-                        pointBackgroundColor: '#0582CA',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#0582CA'
-                    },
-                    {
-                        label: 'XRP',
-                        data: [1.0, 0.5],
-                        backgroundColor: 'rgba(232, 72, 85, 0.2)',
-                        borderColor: '#E84855',
-                        pointBackgroundColor: '#E84855',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#E84855'
-                    }
-                ]
-            },
-            options: {
-                 responsive: true,
-                 maintainAspectRatio: false,
-                 plugins: {
-                    legend: {
-                        position: 'bottom',
-                         labels: {
-                            font: {
-                               family: "'Inter', sans-serif",
-                               size: 14
-                            }
-                        }
-                    },
-                    tooltip: {
-                         callbacks: {
-                            title: (tooltipItems) => tooltipItems[0].dataset.label
-                        },
-                         bodyFont: {
-                             family: "'Inter', sans-serif",
-                        },
-                        titleFont: {
-                            family: "'Inter', sans-serif",
-                        }
-                    }
+        function initializeCharts() {
+            const speedCtx = document.getElementById('speedChart').getContext('2d');
+            new Chart(speedCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['XRP (~4s)', 'Ethereum (~15s)', 'Bitcoin (~10m)'],
+                    datasets: [{
+                        label: 'Transaction Time (Seconds)',
+                        data: [4, 15, 600],
+                        backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
+                        borderColor: ['#E84855', '#0582CA', '#FBB13C'],
+                        borderWidth: 1
+                    }]
                 },
-                scales: {
-                    r: {
-                        angleLines: {
-                            display: true
+                options: { ...sharedChartOptions,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            type: 'logarithmic',
+                            title: { display: true, text: 'Time in Seconds (Log Scale)' },
+                             ticks: { font: { family: "'Inter', sans-serif", size: 12 } },
+                             grid: { color: '#e5e7eb' }
                         },
-                        suggestedMin: 0,
-                        suggestedMax: 1,
-                        pointLabels: {
-                            font: {
-                                size: 14,
-                                weight: 'bold',
-                                family: "'Inter', sans-serif"
-                            }
-                        },
-                        ticks: {
-                            backdropColor: 'rgba(255, 255, 255, 0.75)'
+                        y: {
+                             ticks: { font: { family: "'Inter', sans-serif", size: 12 } },
+                             grid: { display: false }
                         }
                     }
                 }
-            }
-        });
-        
-        const projectionCtx = document.getElementById('projectionChart').getContext('2d');
-        new Chart(projectionCtx, {
-            type: 'bar',
-            data: {
-                labels: ['XRP', 'Ethereum', 'Bitcoin'],
-                datasets: [{
-                    label: 'Low-End Projection ($)',
-                    data: [10, 15000, 500000],
-                    backgroundColor: '#006494',
-                    borderColor: '#006494',
-                    borderWidth: 1,
-                    stack: 'Stack 0',
-                }, {
-                    label: 'High-End Projection ($)',
-                    data: [20, 5000, 500000],
-                    backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
-                    borderColor: ['#E84855', '#0582CA', '#FBB13C'],
-                    borderWidth: 1,
-                    stack: 'Stack 0',
-                }]
-            },
-            options: {
-                ...sharedChartOptions,
-                indexAxis: 'y',
-                 scales: {
-                    x: {
-                        type: 'logarithmic',
-                        title: {
-                            display: true,
-                            text: 'Projected Value in USD (Log Scale)',
-                            font: {
-                                size: 14,
-                                family: "'Inter', sans-serif"
-                            }
-                        },
-                        ticks: {
-                             font: {
-                                 family: "'Inter', sans-serif",
-                                 size: 12
-                            },
-                            callback: function(value, index, values) {
-                                if (value === 1000000) return '$1M';
-                                if (value === 100000) return '$100K';
-                                if (value === 10000) return '$10K';
-                                if (value === 1000) return '$1K';
-                                if (value === 100) return '$100';
-                                if (value === 10) return '$10';
-                                return null;
-                            }
-                        },
-                         grid: {
-                            color: '#e5e7eb'
-                        }
+            });
+
+            const profileCtx = document.getElementById('profileChart').getContext('2d');
+            new Chart(profileCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Volatility', 'Correlation w/ BTC'],
+                    datasets: [
+                        { label: 'BTC', data: [0.7, 1.0], backgroundColor: 'rgba(251, 177, 60, 0.2)', borderColor: '#FBB13C', pointBackgroundColor: '#FBB13C', pointBorderColor: '#fff' },
+                        { label: 'ETH', data: [0.8, 0.8], backgroundColor: 'rgba(5, 130, 202, 0.2)', borderColor: '#0582CA', pointBackgroundColor: '#0582CA', pointBorderColor: '#fff' },
+                        { label: 'XRP', data: [1.0, 0.5], backgroundColor: 'rgba(232, 72, 85, 0.2)', borderColor: '#E84855', pointBackgroundColor: '#E84855', pointBorderColor: '#fff' }
+                    ]
+                },
+                options: {
+                     responsive: true,
+                     maintainAspectRatio: false,
+                     plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif", size: 14 } } },
+                        tooltip: { callbacks: { title: (tooltipItems) => tooltipItems[0].dataset.label }, bodyFont: { family: "'Inter', sans-serif" }, titleFont: { family: "'Inter', sans-serif" } }
                     },
-                    y: {
-                        stacked: true,
-                        ticks: {
-                            font: {
-                                size: 16,
-                                weight: 'bold',
-                                family: "'Inter', sans-serif"
-                            }
-                        },
-                         grid: {
-                            display: false
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 1,
+                            pointLabels: { font: { size: 14, weight: 'bold', family: "'Inter', sans-serif" } },
+                            ticks: { backdropColor: 'rgba(255, 255, 255, 0.75)' }
                         }
                     }
                 }
-            }
-        });
+            });
+            
+            const projectionCtx = document.getElementById('projectionChart').getContext('2d');
+            new Chart(projectionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['XRP', 'Ethereum', 'Bitcoin'],
+                    datasets: [{
+                        label: 'Low-End Projection ($)',
+                        data: [10, 15000, 500000], // Using 2035 Low-End for visual range
+                        backgroundColor: '#006494',
+                        borderColor: '#006494',
+                        borderWidth: 1,
+                        stack: 'Stack 0',
+                    }, {
+                        label: 'High-End Projection ($)',
+                        data: [50, 35000, 1500000], // Using 2035 High-End
+                        backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
+                        borderColor: ['#E84855', '#0582CA', '#FBB13C'],
+                        borderWidth: 1,
+                        stack: 'Stack 0',
+                    }]
+                },
+                options: {
+                    ...sharedChartOptions,
+                    indexAxis: 'y',
+                     scales: {
+                        x: {
+                            type: 'logarithmic',
+                            title: { display: true, text: 'Projected Value in USD (Log Scale)', font: { size: 14, family: "'Inter', sans-serif" } },
+                            ticks: {
+                                 font: { family: "'Inter', sans-serif", size: 12 },
+                                callback: function(value, index, values) {
+                                    if (value === 1000000) return '$1M';
+                                    if (value === 100000) return '$100K';
+                                    if (value === 10000) return '$10K';
+                                    if (value === 1000) return '$1K';
+                                    if (value === 100) return '$100';
+                                    if (value === 10) return '$10';
+                                    return null;
+                                }
+                            },
+                             grid: { color: '#e5e7eb' }
+                        },
+                        y: {
+                            stacked: true,
+                            ticks: { font: { size: 16, weight: 'bold', family: "'Inter', sans-serif" } },
+                             grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // --- Initialize on Load ---
+        window.onload = () => {
+            fetchPrices(); // Fetch and update current prices
+            initializeCharts(); // Draw charts
+            setProjectionHorizon('10Y'); // Set 10Y as default and trigger initial render
+        };
 
     </script>
 </body>
