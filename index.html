@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Titans: A Comparative Analysis of BTC, ETH, & XRP</title>
+    <title>Crypto Titans: A Comparative Analysis of BTC, ETH, XRP, & SOL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,24 +34,6 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
-    <!-- Primary Meta Tags -->
-    <title>💰 Crypto Titans: Comparative Analysis</title>
-    <meta name="title" content="Crypto Titans: Comparative Analysis">
-    <meta name="description" content="Interactive comparison of Bitcoin, Ethereum, and XRP with real-time prices, projection calculator, and data visualizations.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jmckella.github.io/crypto-infographic/">
-    <meta property="og:title" content="💰 Crypto Titans: Comparative Analysis">
-    <meta property="og:description" content="Interactive comparison of Bitcoin, Ethereum, and XRP with real-time prices, projection calculator, and data visualizations.">
-    <meta property="og:image" content="https://jmckella.github.io/crypto-infographic/preview.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jmckella.github.io/crypto-infographic/">
-    <meta property="twitter:title" content="💰 Crypto Titans: Comparative Analysis">
-    <meta property="twitter:description" content="Interactive comparison of Bitcoin, Ethereum, and XRP with real-time prices, projection calculator, and data visualizations.">
-    <meta property="twitter:image" content="https://jmckella.github.io/crypto-infographic/preview.png">
 </head>
 <body class="text-gray-800">
 
@@ -59,20 +41,21 @@
 
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-6xl font-black mb-2 gradient-text">Crypto Titans</h1>
-            <p class="text-lg md:text-xl text-gray-600">A Comparative Analysis of Bitcoin, Ethereum, & XRP</p>
+            <p class="text-lg md:text-xl text-gray-600">A Comparative Analysis of Bitcoin, Ethereum, XRP, & Solana</p>
             <!-- Current Date Display -->
             <p id="priceTimestamp" class="text-sm text-gray-500 mt-2">Loading current prices...</p> 
         </header>
 
         <section id="foundations" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8">The Foundations: Core Purpose & Function</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Updated to 4-column layout for desktop (lg:grid-cols-4) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- BTC Card -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <div class="text-5xl mb-4">💰</div>
                     <h3 class="text-2xl font-bold mb-2" style="color: #FBB13C;">Bitcoin (BTC)</h3>
                     <p class="text-gray-700 font-semibold mb-2">Store of Value ("Digital Gold")</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="btcCurrentPrice" class="font-bold text-base text-gray-800">$60,000</span> (Live)</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="btcCurrentPrice" class="font-bold text-base text-gray-800">...</span> (Live)</p>
                     <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Fixed Cap (21 Million)</p>
                 </div>
                 <!-- ETH Card -->
@@ -80,7 +63,7 @@
                     <div class="text-5xl mb-4">⚙️</div>
                     <h3 class="text-2xl font-bold mb-2" style="color: #0582CA;">Ethereum (ETH)</h3>
                     <p class="text-gray-700 font-semibold mb-2">Smart Contract Platform</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="ethCurrentPrice" class="font-bold text-base text-gray-800">$3,500</span> (Live)</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="ethCurrentPrice" class="font-bold text-base text-gray-800">...</span> (Live)</p>
                     <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Deflationary/Elastic</p>
                 </div>
                 <!-- XRP Card -->
@@ -88,8 +71,16 @@
                     <div class="text-5xl mb-4">🌐</div>
                     <h3 class="text-2xl font-bold mb-2" style="color: #E84855;">XRP</h3>
                     <p class="text-gray-700 font-semibold mb-2">Cross-Border Payments</p>
-                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="xrpCurrentPrice" class="font-bold text-base text-gray-800">$0.50</span> (Live)</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="xrpCurrentPrice" class="font-bold text-base text-gray-800">...</span> (Live)</p>
                     <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Pre-Mined (100 Billion)</p>
+                </div>
+                <!-- SOL Card (NEW) -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-2" style="color: #9945FF;">Solana (SOL)</h3>
+                    <p class="text-gray-700 font-semibold mb-2">High-Performance Layer 1</p>
+                    <p class="text-sm text-gray-500"><strong class="text-gray-700">Current Price:</strong> <span id="solCurrentPrice" class="font-bold text-base text-gray-800">...</span> (Live)</p>
+                    <p class="text-sm text-gray-500 mt-1"><strong class="text-gray-700">Supply:</strong> Inflationary/Burning</p>
                 </div>
             </div>
         </section>
@@ -100,14 +91,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-xl font-bold text-center mb-4">Transaction Speed Comparison</h3>
-                     <p class="text-center text-sm text-gray-500 mb-4">XRP's focus on payments is evident in its near-instant settlement time compared to the more deliberate block times of Bitcoin and Ethereum.</p>
+                     <p class="text-center text-sm text-gray-500 mb-4">Solana and XRP show clear optimization for high-speed transactions compared to the foundational networks.</p>
                     <div class="chart-container">
                         <canvas id="speedChart"></canvas>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-xl font-bold text-center mb-4">Market Behavior Profile</h3>
-                     <p class="text-center text-sm text-gray-500 mb-4">This profile shows XRP's higher volatility and weaker correlation to Bitcoin, highlighting its independent market drivers, often tied to regulatory news.</p>
+                     <p class="text-center text-sm text-gray-500 mb-4">A look at relative Volatility and Correlation to Bitcoin's price movements.</p>
                     <div class="chart-container">
                         <canvas id="profileChart"></canvas>
                     </div>
@@ -117,7 +108,7 @@
 
         <section id="projections" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8">The Horizon: Trajectory Outlook</h2>
-             <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Toggle between the 5-year and 10-year high-end projections below. The calculator will automatically use the selected horizon.</p>
+             <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Toggle the time horizon, then select a currency below to view the detailed Bull and Bear case analysis for the target price used in the calculator.</p>
             
             <!-- HORIZON SELECTION BUTTONS (5Y/10Y) -->
             <div class="flex justify-center space-x-4 mb-8">
@@ -129,14 +120,15 @@
             <div class="bg-white rounded-lg shadow-xl p-6 mb-10">
                 <h3 id="trajectoryTitle" class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">10-Year Trajectory Outlook (To 2035)</h3>
                 
-                <!-- Currency Tab Buttons -->
+                <!-- Currency Tab Buttons (Now includes SOL) -->
                 <div class="flex justify-center space-x-4 mb-6 flex-wrap">
-                    <button onclick="showOutlook('BTC')" id="tab-BTC" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-[#FBB13C] text-white shadow-md hover:opacity-80 m-1">Bitcoin (BTC)</button>
-                    <button onclick="showOutlook('ETH')" id="tab-ETH" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">Ethereum (ETH)</button>
-                    <button onclick="showOutlook('XRP')" id="tab-XRP" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">XRP</button>
+                    <button onclick="selectCoinAndRenderAnalysis('BTC')" id="tab-BTC" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-[#FBB13C] text-white shadow-md hover:opacity-80 m-1">Bitcoin (BTC)</button>
+                    <button onclick="selectCoinAndRenderAnalysis('ETH')" id="tab-ETH" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">Ethereum (ETH)</button>
+                    <button onclick="selectCoinAndRenderAnalysis('XRP')" id="tab-XRP" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">XRP</button>
+                    <button onclick="selectCoinAndRenderAnalysis('SOL')" id="tab-SOL" class="px-6 py-2 rounded-full font-bold transition-colors duration-200 bg-gray-200 text-gray-700 hover:bg-gray-300 m-1">Solana (SOL)</button>
                 </div>
 
-                <!-- Dynamic Content Display -->
+                <!-- Dynamic Content Display for Bull/Bear Case -->
                 <div id="outlook-content" class="p-6 border rounded-lg shadow-inner">
                     <!-- Content will be injected here by JavaScript -->
                 </div>
@@ -152,20 +144,21 @@
             </div>
 
             <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#00A6FB]">
-                <h3 id="calculatorTitle" class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">2035 Potential Return Calculator</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+                <h3 id="calculatorTitle" class="text-2xl font-bold text-center mb-6" style="color: #0582CA;">2035 Potential Return Calculator (Bull Case)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
                     
                     <div>
                         <label for="investmentAmount" class="block text-sm font-medium text-gray-700 mb-1">Your Investment ($)</label>
                         <input type="number" id="investmentAmount" value="1000" min="1" class="w-full p-3 border border-gray-300 rounded-md focus:ring-[#00A6FB] focus:border-[#00A6FB]">
                     </div>
 
-                    <div>
+                    <div class="md:col-span-2">
                         <label for="currencySelect" class="block text-sm font-medium text-gray-700 mb-1">Select Currency</label>
                         <select id="currencySelect" class="w-full p-3 border border-gray-300 rounded-md focus:ring-[#00A6FB] focus:border-[#00A6FB] appearance-none bg-white">
                             <option value="BTC">Bitcoin (BTC)</option>
                             <option value="ETH">Ethereum (ETH)</option>
                             <option value="XRP">XRP</option>
+                            <option value="SOL">Solana (SOL)</option>
                         </select>
                     </div>
 
@@ -177,7 +170,7 @@
                 </div>
 
                 <div id="results" class="mt-8 text-center bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[100px] flex flex-col justify-center">
-                    <p class="text-gray-500">Enter an amount and select a currency to see the potential 2035 return.</p>
+                    <p class="text-gray-500">Enter an amount and select a currency to see the potential 2035 return (Bull Case).</p>
                 </div>
             </div>
         </section>
@@ -188,11 +181,12 @@
                  <!-- NEW PRICE TARGET METHODOLOGY -->
                 <div class="mb-8">
                      <h4 class="text-xl font-bold mb-3 border-b pb-2" style="color: #0582CA;">Price Target Methodology</h4>
-                     <p class="text-gray-700 mb-3 text-sm">The 5-year (2030) and 10-year (2035) targets provided are high-end projections based on qualitative analysis, not guaranteed forecasts. They assume a 'best-case scenario' of continued crypto adoption and favorable regulatory environments.</p>
+                     <p class="text-gray-700 mb-3 text-sm">The 5-year (2030) and 10-year (2035) targets provided are **Bull Case (High-End) projections** and are not guaranteed forecasts. They assume a 'best-case scenario' of continued crypto adoption and favorable regulatory environments.</p>
                      <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
-                         <li><strong class="text-gray-800">BTC:</strong> Based on the assumption it captures an increasing share of the total global gold/reserve asset market capitalization after halving cycles.</li>
-                         <li><strong class="text-gray-800">ETH:</strong> Based on its network utility, assuming it maintains dominance as the primary L1 settlement layer, fueling high demand for transaction fees (EIP-1559 burn mechanism), and increased adoption of Layer 2 scaling.</li>
-                         <li><strong class="text-gray-800">XRP:</strong> Based on achieving mass institutional adoption in cross-border payments, potentially serving major global financial corridors, driving its market cap significantly higher.</li>
+                         <li><strong class="text-gray-800">BTC:</strong> Based on capturing an increasing share of the global gold/reserve asset market capitalization after halving cycles.</li>
+                         <li><strong class="text-gray-800">ETH:</strong> Based on network utility, maintaining L1 dominance, and successful adoption of Layer 2 scaling (Defi, Web3).</li>
+                         <li><strong class="text-gray-800">XRP:</strong> Based on achieving mass institutional adoption in cross-border payments, serving major global financial corridors.</li>
+                         <li><strong class="text-gray-800">SOL:</strong> Based on successfully resolving network stability issues and becoming the preferred infrastructure for high-throughput applications like consumer gaming and high-frequency trading.</li>
                      </ul>
                 </div>
                 <!-- END NEW PRICE TARGET METHODOLOGY -->
@@ -236,12 +230,19 @@
                                     <a href="https://ethereum.org/en/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Ecosystem overview and roadmap</a>
                                 </div>
                             </li>
-                            <!-- XRPL LINK CONFIRMED -->
                             <li class="flex items-start">
                                 <span class="text-xl mr-3" style="color: #E84855;">𝓡</span>
                                 <div>
                                     <p class="font-semibold text-gray-800">XRP Ledger (XRPL)</p>
                                     <a href="https://xrpl.org/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Documentation on the payment protocol</a>
+                                </div>
+                            </li>
+                            <!-- NEW SOLANA LINK -->
+                            <li class="flex items-start">
+                                <span class="text-xl mr-3" style="color: #9945FF;">⚡</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Solana Documentation</p>
+                                    <a href="https://docs.solana.com/" target="_blank" class="text-[#00A6FB] hover:text-[#0582CA] transition duration-150 text-sm">Official docs for the L1 network</a>
                                 </div>
                             </li>
                         </ul>
@@ -260,6 +261,7 @@
         // --- Global State ---
         let activeCoin = 'BTC';
         let currentHorizon = '10Y'; // Default to 10-Year (2035)
+        let activeCase = 'bull'; // Default to Bull Case
 
         // Use a standard formatter for currency
         const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -273,21 +275,59 @@
         const PRICES = {
             BTC: { id: 'bitcoin', current: 60000, '5Y': 500000, '10Y': 1500000, color: '#FBB13C' },
             ETH: { id: 'ethereum', current: 3500, '5Y': 15000, '10Y': 35000, color: '#0582CA' },
-            XRP: { id: 'ripple', current: 0.50, '5Y': 10, '10Y': 50, color: '#E84855' }
+            XRP: { id: 'ripple', current: 0.50, '5Y': 10, '10Y': 50, color: '#E84855' },
+            SOL: { id: 'solana', current: 150, '5Y': 1000, '10Y': 3500, color: '#9945FF' } // NEW
         };
         
+        // Detailed outlooks including Bull and Bear cases for all four coins
         const OUTLOOK_DETAILS = {
             BTC: {
-                '5Y': { title: 'BTC: Halving Cycle Momentum', year: '2030', text: "By 2030, following the 2024 halving, Bitcoin is expected to solidify its status as a major, regulated store of value. Adoption by institutional funds and clearer regulatory frameworks will be the primary drivers. Focus shifts from purely speculative growth to long-term capital preservation." },
-                '10Y': { title: 'BTC: The Macro Reserve Asset', year: '2035', text: "By 2035, Bitcoin is projected to solidify its role as a global, non-sovereign **Store of Value**, competing directly with gold. Its trajectory is primarily driven by institutional adoption, regulatory clarity (e.g., global spot ETFs), and its fourth halving cycle completion. The scarcity model and its proven security make it an essential hedge against currency devaluation." }
+                '5Y': { 
+                    year: '2030',
+                    bull: { price: PRICES.BTC['5Y'], title: 'BTC (5Y) Bull: Digital Reserve Asset', text: "By 2030, Bitcoin is expected to solidify its status as a major, regulated store of value, driven by spot ETFs and global institutional adoption. Focus shifts from speculative growth to long-term capital preservation, competing directly with gold." }, 
+                    bear: { price: 150000, title: 'BTC (5Y) Bear: Regulatory Headwinds & Saturation', text: "A bear case involves strong regulatory pushback in major economies or failure to see significant inflow from traditional finance. Competition from sovereign digital currencies (CBDCs) or a slow macro environment could cap growth at the lower target." } 
+                },
+                '10Y': { 
+                    year: '2035',
+                    bull: { price: PRICES.BTC['10Y'], title: 'BTC (10Y) Bull: The Macro Reserve Asset', text: "By 2035, Bitcoin is projected to capture a substantial share of global monetary assets, solidifying its role as a non-sovereign global **Store of Value**. Its scarcity model and proven security make it an essential hedge against currency devaluation." }, 
+                    bear: { price: 300000, title: 'BTC (10Y) Bear: Diminishing Returns', text: "A bear scenario assumes that future halving events have a reduced impact, and environmental concerns or scaling limitations (in the absence of layer 2 success) prevent mass retail adoption, leaving it primarily as an institutional niche asset." } 
+                }
             },
             ETH: {
-                '5Y': { title: 'ETH: Layer 2 Scaling & DeFi Dominance', year: '2030', text: "The next five years will see Ethereum's value driven by the success of Layer 2 solutions (rollups) for scalability and reduced costs. Continued dominance in Decentralized Finance (DeFi) and the 'ultrasound money' deflationary mechanism are key to driving price appreciation." },
-                '10Y': { title: 'ETH: The World Computer', year: '2035', text: "Ethereum's value trajectory is tied to its utility as the foundation for decentralized finance (DeFi), NFTs, and Web3 applications. Key drivers include successful scaling solutions, continued developer activity, and its deflationary 'ultrasound money' economic policy. Success relies on maintaining dominance against competing Layer 1 chains and high transaction throughput." }
+                '5Y': { 
+                    year: '2030',
+                    bull: { price: PRICES.ETH['5Y'], title: 'ETH (5Y) Bull: Layer 2 Scaling & DeFi Dominance', text: "The next five years will see Ethereum's value driven by the success of Layer 2 solutions (rollups) for scalability and reduced costs. Continued dominance in Decentralized Finance (DeFi) and the 'ultrasound money' deflationary mechanism are key to driving price appreciation." }, 
+                    bear: { price: 7000, title: 'ETH (5Y) Bear: High Transaction Cost Barrier', text: "Failure of L2 solutions to fully decentralize or ongoing high base-layer transaction costs could drive developers and users to cheaper, faster Layer 1 competitors, slowing its ecosystem growth and utility capture." } 
+                },
+                '10Y': { 
+                    year: '2035',
+                    bull: { price: PRICES.ETH['10Y'], title: 'ETH (10Y) Bull: The World Computer', text: "Ethereum's value trajectory is tied to its utility as the foundation for decentralized finance (DeFi), NFTs, and Web3 applications. Its success relies on maintaining dominance against competing Layer 1 chains and high transaction throughput via its scaling roadmap." }, 
+                    bear: { price: 15000, title: 'ETH (10Y) Bear: Centralization Concerns', text: "As validators consolidate power, concerns over network centralization could emerge, damaging its reputation as a decentralized settlement layer and causing a loss of faith among core developers and large DeFi protocols." } 
+                }
             },
             XRP: {
-                '5Y': { title: 'XRP: Regulatory Clarity & Utility', year: '2030', text: "XRP's 5-year outlook is heavily dependent on achieving favorable regulatory outcomes and securing partnerships with major financial institutions for cross-border payments. The immediate focus is on proving the utility of its fast, low-cost transaction network." },
-                '10Y': { title: 'XRP: Bridging Traditional Finance', year: '2035', text: "XRP's trajectory is less tied to retail speculation and more focused on achieving major regulatory wins and integration with large financial institutions for cross-border settlements. Its efficiency and low-cost transaction fees are its core value proposition. Price growth will be contingent on securing partnerships and mainstream adoption by banks and payment providers worldwide." }
+                '5Y': { 
+                    year: '2030',
+                    bull: { price: PRICES.XRP['5Y'], title: 'XRP (5Y) Bull: Regulatory Clarity & Utility', text: "XRP's 5-year outlook is heavily dependent on achieving favorable regulatory outcomes globally and securing partnerships with major financial institutions for cross-border payments. The immediate focus is on proving the utility of its fast, low-cost transaction network." }, 
+                    bear: { price: 1.5, title: 'XRP (5Y) Bear: Legal and Market Failure', text: "Lingering regulatory uncertainty or a failure to secure significant, scaled institutional adoption, combined with the continuous unlock of escrowed tokens, could severely limit upward price movement and maintain its current valuation range." } 
+                },
+                '10Y': { 
+                    year: '2035',
+                    bull: { price: PRICES.XRP['10Y'], title: 'XRP (10Y) Bull: Bridging Traditional Finance', text: "XRP's trajectory is focused on achieving major regulatory wins and integration with large financial institutions for cross-border settlements. Its efficiency and low-cost transaction fees could position it as the dominant bridge currency for global payment providers." }, 
+                    bear: { price: 5, title: 'XRP (10Y) Bear: Obsolescence by CBDCs', text: "The development and mass deployment of competing Central Bank Digital Currencies (CBDCs) or other proprietary digital settlement systems by major financial players could make XRP's utility model obsolete." } 
+                }
+            },
+            SOL: { // NEW
+                '5Y': { 
+                    year: '2030',
+                    bull: { price: PRICES.SOL['5Y'], title: 'SOL (5Y) Bull: The High-Throughput Layer 1', text: "If Solana maintains its speed advantage, successfully resolves network stability issues, and attracts a massive influx of developers for DeFi and gaming (often called 'Solana Summer'), it could solidify its position as a top-tier L1 network." }, 
+                    bear: { price: 300, title: 'SOL (5Y) Bear: Centralization & Network Failure', text: "The primary risk is recurring network instability, which erodes trust. Further regulatory scrutiny on its initial funding or if its fee structure proves unsustainable for validators could severely limit institutional backing." } 
+                },
+                '10Y': { 
+                    year: '2035',
+                    bull: { price: PRICES.SOL['10Y'], title: 'SOL (10Y) Bull: Web3 Infrastructure Powerhouse', text: "Assuming long-term stability and decentralization improvements, Solana could become the dominant global infrastructure for high-frequency trading, mainstream gaming, and consumer-facing Web3 apps due to its superior transaction speed and low cost." }, 
+                    bear: { price: 800, title: 'SOL (10Y) Bear: Ethereum Scaling Triumphs', text: "A bear scenario arises if Ethereum's Layer 2 ecosystem successfully delivers similar speed and scalability without Solana's past centralization or stability concerns. Failure to diversify beyond its core use-cases could limit its global market capture." } 
+                }
             }
         };
 
@@ -315,11 +355,13 @@
                 PRICES.BTC.current = data.bitcoin?.usd || PRICES.BTC.current;
                 PRICES.ETH.current = data.ethereum?.usd || PRICES.ETH.current;
                 PRICES.XRP.current = data.ripple?.usd || PRICES.XRP.current;
+                PRICES.SOL.current = data.solana?.usd || PRICES.SOL.current; // NEW SOLANA
 
                 // Update UI elements
                 document.getElementById('btcCurrentPrice').textContent = largeCurrencyFormatter.format(PRICES.BTC.current);
                 document.getElementById('ethCurrentPrice').textContent = largeCurrencyFormatter.format(PRICES.ETH.current);
                 document.getElementById('xrpCurrentPrice').textContent = currencyFormatter.format(PRICES.XRP.current);
+                document.getElementById('solCurrentPrice').textContent = currencyFormatter.format(PRICES.SOL.current); // NEW SOLANA
 
                 // Update date and year
                 const now = new Date();
@@ -352,10 +394,10 @@
 
             // Update section and calculator titles
             document.getElementById('trajectoryTitle').textContent = `${horizon}-Year Trajectory Outlook (To ${year})`;
-            document.getElementById('calculatorTitle').textContent = `${year} Potential Return Calculator`;
+            document.getElementById('calculatorTitle').textContent = `${year} Potential Return Calculator (${activeCase === 'bull' ? 'Bull Case' : 'Bear Case'})`;
             
             // Re-render the currently active coin outlook with the new horizon data
-            showOutlook(activeCoin);
+            selectCoinAndRenderAnalysis(activeCoin);
             
             // Recalculate if values exist
             const resultsDiv = document.getElementById('results');
@@ -364,18 +406,16 @@
             } else {
                  resultsDiv.innerHTML = `<p class="text-gray-500">Enter an amount and select a currency to see the potential ${year} return.</p>`;
             }
+            
+            // Reinitialize projection chart to use the new horizon's high-end data
+            initializeProjectionChart();
         }
 
-        // Function to handle the tabbed trajectory view (BTC, ETH, XRP)
-        function showOutlook(currencyKey) {
+        // Function to select a coin and render the default case (Bull) for the current horizon
+        function selectCoinAndRenderAnalysis(currencyKey) {
             activeCoin = currencyKey;
+            activeCase = 'bull'; // Default to bull case when coin is switched
             
-            // Get data for the current coin and the selected horizon
-            const data = OUTLOOK_DETAILS[currencyKey][currentHorizon];
-            const targetPrice = PRICES[currencyKey][currentHorizon];
-            const color = PRICES[currencyKey].color;
-            const year = data.year;
-
             // Reset all currency tabs to gray style
             document.querySelectorAll('[id^="tab-"]').forEach(tab => {
                 tab.style.backgroundColor = 'rgb(229 231 235)'; // gray-200
@@ -385,10 +425,31 @@
             // Style the active currency tab
             const activeTab = document.getElementById(`tab-${currencyKey}`);
             if (activeTab) {
-                activeTab.style.backgroundColor = color;
+                activeTab.style.backgroundColor = PRICES[currencyKey].color;
                 activeTab.style.color = 'white';
             }
             
+            // Render the default 'bull' case
+            renderCase('bull');
+        }
+
+        // Function to handle the switch between Bull and Bear case
+        function renderCase(caseType) {
+            activeCase = caseType;
+            const data = OUTLOOK_DETAILS[activeCoin][currentHorizon][caseType];
+            const targetPrice = data.price;
+            const color = PRICES[activeCoin].color;
+            const year = OUTLOOK_DETAILS[activeCoin][currentHorizon].year;
+            
+            // Update calculator title to reflect the selected case
+            document.getElementById('calculatorTitle').textContent = `${year} Potential Return Calculator (${activeCase === 'bull' ? 'Bull Case' : 'Bear Case'})`;
+            
+            // Recalculate if a previous calculation was done
+            const resultsDiv = document.getElementById('results');
+            if (!resultsDiv.textContent.includes("Enter an amount")) {
+                 calculateReturn();
+            }
+
             // Format for display
             const priceFormat = new Intl.NumberFormat('en-US', {
                 style: 'currency',
@@ -396,19 +457,33 @@
                 minimumFractionDigits: (targetPrice < 100) ? 2 : 0, 
                 maximumFractionDigits: (targetPrice < 100) ? 2 : 0
             });
+            
+            // Determine button styling based on activeCase
+            const bullButtonClass = caseType === 'bull' ? `bg-[${color}] text-white` : 'bg-gray-100 text-gray-700';
+            const bearButtonClass = caseType === 'bear' ? `bg-red-600 text-white` : 'bg-gray-100 text-gray-700';
+
 
             // Update the dynamic content pane
             document.getElementById('outlook-content').innerHTML = `
-                <div class="border border-[${color}] rounded-lg shadow-inner p-4 transition-all duration-300">
+                <div class="mb-4 flex justify-center space-x-4">
+                    <button onclick="renderCase('bull')" class="px-5 py-2 rounded-lg font-bold transition-colors ${bullButtonClass} hover:opacity-90">Bull Case</button>
+                    <button onclick="renderCase('bear')" class="px-5 py-2 rounded-lg font-bold transition-colors ${bearButtonClass} hover:opacity-90">Bear Case</button>
+                </div>
+
+                <div class="border rounded-lg shadow-inner p-4 transition-all duration-300 border-[${color}]">
                     <h4 class="text-2xl font-extrabold mb-3" style="color: ${color};">${data.title}</h4>
                     <p class="text-gray-700 mb-4">${data.text}</p>
-                    <p class="text-2xl font-black mt-3 text-center">${year} High-End Target: <span class="text-[${color}]">${priceFormat.format(targetPrice)}+</span></p>
+                    <p class="text-2xl font-black mt-3 text-center">
+                        ${year} Target Price: 
+                        <span style="color: ${caseType === 'bull' ? color : '#e84855'};">
+                            ${priceFormat.format(targetPrice)}${caseType === 'bull' ? '+' : ''}
+                        </span>
+                    </p>
                 </div>
             `;
             // Ensure the border color is set correctly using the style attribute
-            document.getElementById('outlook-content').querySelector('div').style.borderColor = color;
+            document.getElementById('outlook-content').querySelector('.border').style.borderColor = color;
         }
-
 
         // Function to run the calculator based on dynamic prices
         function calculateReturn() {
@@ -427,8 +502,10 @@
             }
 
             const currentPrice = data.current;
-            const targetPrice = data[currentHorizon];
             
+            // Use the target price from the currently active case (bull/bear)
+            const targetPrice = OUTLOOK_DETAILS[currencyKey][currentHorizon][activeCase].price;
+
             const numberOfCoins = investmentAmount / currentPrice;
             const futureValue = numberOfCoins * targetPrice;
             const totalReturn = futureValue - investmentAmount;
@@ -442,10 +519,10 @@
                 maximumFractionDigits: (targetPrice < 100) ? 2 : 0
             });
             
-            const returnColor = data.color;
+            const returnColor = activeCase === 'bull' ? data.color : '#e84855'; // Use coin color for bull, red for bear
 
             resultsDiv.innerHTML = `
-                <p class="text-lg font-semibold text-gray-700 mb-2">Potential ${year} Performance for ${currencyKey}</p>
+                <p class="text-lg font-semibold text-gray-700 mb-2">Potential ${year} Performance for ${currencyKey} (${activeCase === 'bull' ? 'Bull Case' : 'Bear Case'})</p>
                 <div class="grid grid-cols-3 gap-4 text-sm font-medium">
                     <div>
                         <p class="text-gray-500">Coins Acquired (at ${currencyFormatter.format(currentPrice)}):</p>
@@ -457,15 +534,17 @@
                     </div>
                     <div>
                         <p class="text-gray-500">Total Return:</p>
-                        <p class="text-xl font-bold" style="color: ${returnColor};">+${percentReturn.toFixed(0)}%</p>
+                        <p class="text-xl font-bold" style="color: ${returnColor};">${totalReturn >= 0 ? '+' : ''}${percentReturn.toFixed(0)}%</p>
                     </div>
                 </div>
-                <p class="text-xs text-gray-400 mt-4">*Based on the current live price and the high-end ${year} projection.</p>
+                <p class="text-xs text-gray-400 mt-4">*Based on the current live price and the ${year} ${activeCase} target.</p>
             `;
         }
 
-        // --- Chart Initialization (remains based on 10-Year for max comparison) ---
+        // --- Chart Initialization and Data ---
         
+        let projectionChartInstance = null; // Store the instance for updates
+
         const sharedChartOptions = {
             responsive: true,
             maintainAspectRatio: false,
@@ -473,10 +552,7 @@
                 legend: {
                     position: 'bottom',
                     labels: {
-                        font: {
-                           family: "'Inter', sans-serif",
-                           size: 14
-                        }
+                        font: { family: "'Inter', sans-serif", size: 14 }
                     }
                 },
                 tooltip: {
@@ -503,17 +579,17 @@
             }
         };
         
-        function initializeCharts() {
+        function initializeSpeedChart() {
             const speedCtx = document.getElementById('speedChart').getContext('2d');
             new Chart(speedCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['XRP (~4s)', 'Ethereum (~15s)', 'Bitcoin (~10m)'],
+                    labels: ['Solana (~0.4s)', 'XRP (~4s)', 'Ethereum (~15s)', 'Bitcoin (~10m)'],
                     datasets: [{
                         label: 'Transaction Time (Seconds)',
-                        data: [4, 15, 600],
-                        backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
-                        borderColor: ['#E84855', '#0582CA', '#FBB13C'],
+                        data: [0.4, 4, 15, 600],
+                        backgroundColor: ['#9945FF', '#E84855', '#0582CA', '#FBB13C'],
+                        borderColor: ['#9945FF', '#E84855', '#0582CA', '#FBB13C'],
                         borderWidth: 1
                     }]
                 },
@@ -533,16 +609,19 @@
                     }
                 }
             });
-
-            const profileCtx = document.getElementById('profileChart').getContext('2d');
+        }
+        
+        function initializeProfileChart() {
+             const profileCtx = document.getElementById('profileChart').getContext('2d');
             new Chart(profileCtx, {
                 type: 'radar',
                 data: {
-                    labels: ['Volatility', 'Correlation w/ BTC'],
+                    labels: ['Volatility', 'Correlation w/ BTC', 'Developer Activity'],
                     datasets: [
-                        { label: 'BTC', data: [0.7, 1.0], backgroundColor: 'rgba(251, 177, 60, 0.2)', borderColor: '#FBB13C', pointBackgroundColor: '#FBB13C', pointBorderColor: '#fff' },
-                        { label: 'ETH', data: [0.8, 0.8], backgroundColor: 'rgba(5, 130, 202, 0.2)', borderColor: '#0582CA', pointBackgroundColor: '#0582CA', pointBorderColor: '#fff' },
-                        { label: 'XRP', data: [1.0, 0.5], backgroundColor: 'rgba(232, 72, 85, 0.2)', borderColor: '#E84855', pointBackgroundColor: '#E84855', pointBorderColor: '#fff' }
+                        { label: 'BTC', data: [0.7, 1.0, 0.5], backgroundColor: 'rgba(251, 177, 60, 0.2)', borderColor: '#FBB13C', pointBackgroundColor: '#FBB13C', pointBorderColor: '#fff' },
+                        { label: 'ETH', data: [0.8, 0.8, 1.0], backgroundColor: 'rgba(5, 130, 202, 0.2)', borderColor: '#0582CA', pointBackgroundColor: '#0582CA', pointBorderColor: '#fff' },
+                        { label: 'XRP', data: [1.0, 0.5, 0.4], backgroundColor: 'rgba(232, 72, 85, 0.2)', borderColor: '#E84855', pointBackgroundColor: '#E84855', pointBorderColor: '#fff' },
+                        { label: 'SOL', data: [0.9, 0.7, 0.8], backgroundColor: 'rgba(153, 69, 255, 0.2)', borderColor: '#9945FF', pointBackgroundColor: '#9945FF', pointBorderColor: '#fff' }
                     ]
                 },
                 options: {
@@ -563,64 +642,87 @@
                     }
                 }
             });
-            
+        }
+
+        function initializeProjectionChart() {
+            const horizonKey = currentHorizon;
+            const btcTarget = PRICES.BTC[horizonKey];
+            const ethTarget = PRICES.ETH[horizonKey];
+            const xrpTarget = PRICES.XRP[horizonKey];
+            const solTarget = PRICES.SOL[horizonKey];
+
+            const btcBear = OUTLOOK_DETAILS.BTC[horizonKey].bear.price;
+            const ethBear = OUTLOOK_DETAILS.ETH[horizonKey].bear.price;
+            const xrpBear = OUTLOOK_DETAILS.XRP[horizonKey].bear.price;
+            const solBear = OUTLOOK_DETAILS.SOL[horizonKey].bear.price;
+
+
+            const data = {
+                labels: ['XRP', 'Solana', 'Ethereum', 'Bitcoin'],
+                datasets: [{
+                    label: 'Bear Case Projection ($)',
+                    data: [xrpBear, solBear, ethBear, btcBear],
+                    backgroundColor: '#006494',
+                    borderColor: '#006494',
+                    borderWidth: 1,
+                    stack: 'Stack 0',
+                }, {
+                    label: 'Bull Case Projection ($)',
+                    data: [xrpTarget, solTarget, ethTarget, btcTarget],
+                    backgroundColor: ['#E84855', '#9945FF', '#0582CA', '#FBB13C'],
+                    borderColor: ['#E84855', '#9945FF', '#0582CA', '#FBB13C'],
+                    borderWidth: 1,
+                    stack: 'Stack 0',
+                }]
+            };
+
             const projectionCtx = document.getElementById('projectionChart').getContext('2d');
-            new Chart(projectionCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['XRP', 'Ethereum', 'Bitcoin'],
-                    datasets: [{
-                        label: 'Low-End Projection ($)',
-                        data: [10, 15000, 500000], // Using 2035 Low-End for visual range
-                        backgroundColor: '#006494',
-                        borderColor: '#006494',
-                        borderWidth: 1,
-                        stack: 'Stack 0',
-                    }, {
-                        label: 'High-End Projection ($)',
-                        data: [50, 35000, 1500000], // Using 2035 High-End
-                        backgroundColor: ['#E84855', '#0582CA', '#FBB13C'],
-                        borderColor: ['#E84855', '#0582CA', '#FBB13C'],
-                        borderWidth: 1,
-                        stack: 'Stack 0',
-                    }]
-                },
-                options: {
-                    ...sharedChartOptions,
-                    indexAxis: 'y',
-                     scales: {
-                        x: {
-                            type: 'logarithmic',
-                            title: { display: true, text: 'Projected Value in USD (Log Scale)', font: { size: 14, family: "'Inter', sans-serif" } },
-                            ticks: {
-                                 font: { family: "'Inter', sans-serif", size: 12 },
-                                callback: function(value, index, values) {
-                                    if (value === 1000000) return '$1M';
-                                    if (value === 100000) return '$100K';
-                                    if (value === 10000) return '$10K';
-                                    if (value === 1000) return '$1K';
-                                    if (value === 100) return '$100';
-                                    if (value === 10) return '$10';
-                                    return null;
-                                }
+
+            if (projectionChartInstance) {
+                projectionChartInstance.data = data;
+                projectionChartInstance.update();
+            } else {
+                projectionChartInstance = new Chart(projectionCtx, {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        ...sharedChartOptions,
+                        indexAxis: 'y',
+                         scales: {
+                            x: {
+                                type: 'logarithmic',
+                                title: { display: true, text: `Projected Value in USD (Log Scale, To ${OUTLOOK_DETAILS.BTC[currentHorizon].year})`, font: { size: 14, family: "'Inter', sans-serif" } },
+                                ticks: {
+                                    font: { family: "'Inter', sans-serif", size: 12 },
+                                    callback: function(value, index, values) {
+                                        if (value === 1000000) return '$1M';
+                                        if (value === 100000) return '$100K';
+                                        if (value === 10000) return '$10K';
+                                        if (value === 1000) return '$1K';
+                                        if (value === 100) return '$100';
+                                        if (value === 10) return '$10';
+                                        return null;
+                                    }
+                                },
+                                 grid: { color: '#e5e7eb' }
                             },
-                             grid: { color: '#e5e7eb' }
-                        },
-                        y: {
-                            stacked: true,
-                            ticks: { font: { size: 16, weight: 'bold', family: "'Inter', sans-serif" } },
-                             grid: { display: false }
+                            y: {
+                                stacked: true,
+                                ticks: { font: { size: 16, weight: 'bold', family: "'Inter', sans-serif" } },
+                                 grid: { display: false }
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
         }
         
         // --- Initialize on Load ---
         window.onload = () => {
             fetchPrices(); // Fetch and update current prices
-            initializeCharts(); // Draw charts
-            setProjectionHorizon('10Y'); // Set 10Y as default and trigger initial render
+            initializeSpeedChart(); // Draw Speed chart
+            initializeProfileChart(); // Draw Profile chart
+            setProjectionHorizon('10Y'); // Set 10Y as default, which calls initializeProjectionChart and selectCoinAndRenderAnalysis
         };
 
     </script>
